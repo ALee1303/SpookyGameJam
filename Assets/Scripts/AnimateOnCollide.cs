@@ -6,6 +6,7 @@ using UnityEngine;
 public class AnimateOnCollide : MonoBehaviour {
     [SerializeField]
     float scoreAdd = 100;
+    public Transform tears;
     // Use this for initialization
     void Start () {
 		
@@ -20,6 +21,10 @@ public class AnimateOnCollide : MonoBehaviour {
             //ScoreManager.Instance.UpdateScore(scoreAdd);
             DOTween.Rewind(gameObject);
             DOTween.PlayForward(gameObject);
+            if(tears != null)
+            {
+                Instantiate(tears, collision.transform.position, Quaternion.identity);
+            }
         }
     }
 }

@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162925442627280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.7, y: 54.9, z: 0}
+  m_LocalPosition: {x: -20.5, y: 53.8, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 0}
@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreAdd: 100
+  tears: {fileID: 4701194037395296, guid: 558635ec4a5524e4fba58154f96b214b, type: 2}
 --- !u!114 &114232637063458402
 MonoBehaviour:
   m_ObjectHideFlags: 1

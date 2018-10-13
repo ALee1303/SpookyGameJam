@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849577721636906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.4825, y: -5.36125, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
   m_Children: []
   m_Father: {fileID: 4884682028826658}
@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1372338148902120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.4625, y: -5.3999996, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
   m_Children: []
   m_Father: {fileID: 4884682028826658}
@@ -99,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1900038005933532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.5, y: 53.8, z: 0}
+  m_LocalPosition: {x: 9.5, y: 11.4, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 4620953226715422}
@@ -115,11 +115,11 @@ CircleCollider2D:
   m_GameObject: {fileID: 1900038005933532}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1986d89a09994d83bb528c5b836a71e, type: 2}
+  m_Material: {fileID: 6200000, guid: 6f8f09a14882445e9a9fa3300a1546a8, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.27, y: -0.23}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!82 &82877204018084294
@@ -131,7 +131,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 694313e96d95b4b00b2c904dd1bbf8d3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9c540c47f4cca461b8a28253865baf05, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.682
   m_Pitch: 1
@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreAdd: 100
+  tears: {fileID: 4701194037395296, guid: 558635ec4a5524e4fba58154f96b214b, type: 2}
 --- !u!114 &114263230472317514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -723,7 +724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11cb013e5ac7d49cb890d18d496815cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreModifier: 100
+  scoreModifier: 50
   clip: {fileID: 0}
 --- !u!212 &212466011884195954
 SpriteRenderer:

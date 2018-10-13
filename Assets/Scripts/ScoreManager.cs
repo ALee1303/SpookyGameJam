@@ -33,7 +33,8 @@ public class ScoreManager : MonoBehaviour
 
     public void HandleDollDestroyed()
     {
-        multiplier = 0.0f;
+        multiplier = 1.0f;
+        OnMultiplierUpdate(multiplier);
     }
 
     private void OnDestroy()
