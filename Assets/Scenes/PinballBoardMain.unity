@@ -2337,6 +2337,8 @@ MonoBehaviour:
   dollPrefab: {fileID: 1963555515605958, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0, type: 2}
   clip: {fileID: 8300000, guid: 43185537823714a12b5505d12e81416c, type: 3}
   destroyDelay: 1
+  mainCamera: {fileID: 1275861763}
+  eye: {fileID: 403369886}
 --- !u!1 &334216219
 GameObject:
   m_ObjectHideFlags: 0
@@ -2618,7 +2620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a96fe5246cd24415b3c2f32aa63a9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doll: {fileID: 1051367955}
+  doll: {fileID: 933880809}
   origin: {x: 0, y: 0}
   eyeRadius: 3
   viewRange: 10
@@ -5257,46 +5259,6 @@ Prefab:
     - target: {fileID: 4598874079586880, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598874079586880, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598874079586880, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598874079586880, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1963555515605958, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0, type: 2}
-      propertyPath: m_TagString
-      value: Voodoo
-      objectReference: {fileID: 0}
-    - target: {fileID: 1501046976490234, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0, type: 2}
-      propertyPath: m_TagString
-      value: Voodoo
-      objectReference: {fileID: 0}
-    - target: {fileID: 1598242475649756, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0, type: 2}
-      propertyPath: m_TagString
-      value: Voodoo
-      objectReference: {fileID: 0}
-    - target: {fileID: 1781540950948750, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0, type: 2}
-      propertyPath: m_TagString
-      value: Voodoo
-      objectReference: {fileID: 0}
-    - target: {fileID: 1310871450768482, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0, type: 2}
-      propertyPath: m_TagString
-      value: Voodoo
-      objectReference: {fileID: 0}
-    - target: {fileID: 1789249401124854, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0, type: 2}
-      propertyPath: m_TagString
-      value: Voodoo
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714682417490510, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0, type: 2}
-      propertyPath: m_TagString
-      value: Voodoo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0, type: 2}
@@ -11099,6 +11061,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 884602903}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &933880809 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4598874079586880, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0,
+    type: 2}
+  m_PrefabInternal: {fileID: 647133903}
 --- !u!1 &935722615
 GameObject:
   m_ObjectHideFlags: 0
@@ -12255,11 +12222,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -165.38501}
---- !u!1 &1051367955 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1789249401124854, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0,
-    type: 2}
-  m_PrefabInternal: {fileID: 647133903}
 --- !u!1 &1054781650
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,9 +14,11 @@ public class GameManager : Singleton<GameManager>
 
     public ScoreManager ScoreManager;
 
+    Scene currentScene;
+
     public GameState GameState { get; private set; }
 
-    private int lives;
+    private int lives = 3;
 
 	// Use this for initialization
 	protected override void Awake()
@@ -31,7 +33,9 @@ public class GameManager : Singleton<GameManager>
         // TODO: Title Screen
         SceneManager.sceneLoaded += OnSceneLoaded;
         if (GameState != GameState.Playing)
-            SceneManager.LoadScene("PinballBoardMain",LoadSceneMode.Additive);
+        {
+            SceneManager.LoadSceneAsync("PinballBoardMain", LoadSceneMode.Additive);
+        }
     }
 
 

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EyeLook : MonoBehaviour {
 
-    [SerializeField]
-    GameObject doll;
+    public Transform doll;
 
     public Vector2 origin;
 
