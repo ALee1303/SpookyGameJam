@@ -29,7 +29,8 @@ public class GameManager : Singleton<GameManager>
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.LoadScene("PinballBoardMain",LoadSceneMode.Additive);
+        if (SceneManager.GetActiveScene().name != "PinballBoardMain")
+            SceneManager.LoadScene("PinballBoardMain",LoadSceneMode.Additive);
     }
 
 
