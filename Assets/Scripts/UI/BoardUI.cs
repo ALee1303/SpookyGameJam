@@ -39,7 +39,7 @@ public class BoardUI : UIController {
 
     public void HandleGameOver()
     {
-        gameOverText.enabled = true;
+        gameOverText.gameObject.SetActive(true);
     }
 
     private void OnDestroy()
