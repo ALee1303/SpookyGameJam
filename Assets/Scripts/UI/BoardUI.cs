@@ -14,6 +14,8 @@ public class BoardUI : UIController {
     [SerializeField]
     Text livesText;
 
+
+
     public void UpdateScoreText(int newScore)
     {
         scoreText.text = "Tears: " + newScore.ToString(); 
