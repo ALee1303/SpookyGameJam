@@ -121,10 +121,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2623086}
-  - component: {fileID: 2623085}
   - component: {fileID: 2623084}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: ScoreManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,20 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ef62be21a6a409383ef85ebdb21405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2623085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2623083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efb00bfd6df664161ad1a4a17e00bdba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VooDooPrefab: {fileID: 0}
-  CurrentUI: {fileID: 0}
-  ScoreManager: {fileID: 0}
 --- !u!4 &2623086
 Transform:
   m_ObjectHideFlags: 0

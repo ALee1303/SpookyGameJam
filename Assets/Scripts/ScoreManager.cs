@@ -7,11 +7,9 @@ public class ScoreManager : MonoBehaviour
 {
     private int score = 0;
     private float multiplier = 1.0f;
-    private float pain = 0.0f;
 
     public UnityAction<int> OnScoreUpdate;
     public UnityAction<float> OnMultiplierUpdate;
-    public UnityAction<float> OnPainUpdate;
 
     private void Awake()
     {
@@ -31,14 +29,5 @@ public class ScoreManager : MonoBehaviour
     {
         multiplier += deltaMultiplier;
         OnMultiplierUpdate(multiplier);
-    }
-
-    public void UpdatePain(float deltaPain)
-    {
-        pain += deltaPain;
-        Mathf.Clamp(pain, 0.0f, 100.0f);
-        if (pain >= 100.0f)
-            return;
-        OnPainUpdate.Invoke(pain);
     }
 }

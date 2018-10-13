@@ -12,7 +12,7 @@ public class BoardUI : UIController {
     Text multiplierText;
 
     [SerializeField]
-    Slider painSlider;
+    Text livesText;
 
     public void UpdateScoreText(int newScore)
     {
@@ -22,8 +22,8 @@ public class BoardUI : UIController {
     {
         multiplierText.text = "Multiplier: x" + newMult.ToString("0.0");
     }
-    public void UpdatePainSlider(float newPain)
+    public void UpdateLivesText(int newLives)
     {
-        painSlider.value = newPain;
+        livesText.text = "x" + newLives.ToString();
     }
 }

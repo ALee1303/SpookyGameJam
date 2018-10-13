@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : Singleton<GameManager> {
+public enum GameState { Playing, GameOver };
+
+public class GameManager : Singleton<GameManager>
+{
 
     public GameObject VooDooPrefab;
 
@@ -11,12 +14,42 @@ public class GameManager : Singleton<GameManager> {
 
     public ScoreManager ScoreManager;
 
+    public GameState GameState { get; private set; }
+
+    private int lives;
+
 	// Use this for initialization
-	protected override void Awake ()
+	protected override void Awake()
     {
         base.Awake();
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        // TODO: move when title screen is available
+        GameState = GameState.Playing;
 	}
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.LoadScene("PinballBoardMain",LoadSceneMode.Additive);
+    }
+
+
+    public void OnDollDestroyed()
+    {
+        lives -= 1;
+        BoardUI boardUI = (BoardUI)CurrentUI;
+        if (boardUI)
+            boardUI.UpdateLivesText(lives);
+        if (lives == 0)
+        {
+            GameOver();
+        }
+    }
+
+    // TODO: gameover logic, UI change, Restart, ETC
+    void GameOver()
+    {
+        GameState = GameState.GameOver;
+    }
 
     void OnSceneLoaded(Scene newScene, LoadSceneMode mode)
     {
@@ -24,12 +57,9 @@ public class GameManager : Singleton<GameManager> {
         {
             ScoreManager.OnScoreUpdate += HandleScoreUpdate;
             ScoreManager.OnMultiplierUpdate += HandleMultiUpdate;
-            ScoreManager.OnPainUpdate += HandlePainUpdate;
         }
     }
 
-	
-    // TODO: talk to UI, etc
     void HandleScoreUpdate(int newScore)
     {
         BoardUI boardUI = (BoardUI)CurrentUI;
@@ -44,18 +74,4 @@ public class GameManager : Singleton<GameManager> {
             boardUI.UpdateMultiplierText(newMulti);
     }
 
-    void HandlePainUpdate(float newPain)
-    {
-        BoardUI boardUI = (BoardUI)CurrentUI;
-        if (boardUI)
-            boardUI.UpdatePainSlider(newPain);
-        if (newPain >= 100.0f)
-            OnPainFull();
-    }
-
-    // TODO: End game logic
-    public void OnPainFull()
-    {
-
-    }
 }
