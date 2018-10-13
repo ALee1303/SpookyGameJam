@@ -91,6 +91,7 @@ public class GameManager : Singleton<GameManager>
 
     void OnSceneLoaded(Scene newScene, LoadSceneMode mode)
     {
+        currentScene = newScene;
         if (newScene.name == "Title")
         {
 
@@ -99,8 +100,6 @@ public class GameManager : Singleton<GameManager>
         {
             ScoreManager.OnScoreUpdate += HandleScoreUpdate;
             ScoreManager.OnMultiplierUpdate += HandleMultiUpdate;
-            GameState = GameState.Playing;
-            currentScene = newScene;
         }
     }
 
