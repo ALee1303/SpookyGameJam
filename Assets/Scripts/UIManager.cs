@@ -14,14 +14,32 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     Slider painSlider;
 
+    [SerializeField]
+    GameObject MainUI;
+
+    [SerializeField]
+    GameObject GameUI;
+
+    public void SpawnUI(string currentScene)
+    {
+        if (currentScene == "MainMenu")
+        {
+            Instantiate(MainUI);
+        }
+        if (currentScene == "PinballBoardMain")
+        {
+            Instantiate(GameUI);
+        }
+    }
+
     public void UpdateScoreText(int newScore)
     {
         //
         scoreText.text = "SCORE: " + newScore.ToString();
     }
 
-    public void UpdatePainSlider(float deltaPain)
+    public void UpdatePainSlider(float newPain)
     {
-        painSlider.value += deltaPain;
+        painSlider.value = newPain;
     }
 }

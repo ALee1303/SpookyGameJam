@@ -5,16 +5,16 @@ using UnityEngine.Events;
 
 public class ScoreManager : Singleton<ScoreManager>
 {
-    private int score;
-    private float multiplier;
+    private int score = 0;
+    private float multiplier = 1.0f;
+    private float pain = 0.0f;
 
     public UnityAction<int> OnScoreUpdate;
+    public UnityAction<float> OnPainUpdate;
 
     protected override void Awake()
     {
         base.Awake();
-        score = 0;
-        multiplier = 1.0f;
     }
 
     public void UpdateScore(float scoreModifier)
@@ -29,5 +29,14 @@ public class ScoreManager : Singleton<ScoreManager>
     public void UpdateMultiplier(float deltaMultiplier)
     {
         multiplier += deltaMultiplier;
+    }
+
+    public void UpdatePain(float deltaPain)
+    {
+        pain += deltaPain;
+        Mathf.Clamp(pain, 0.0f, 100.0f);
+        if (pain >= 100.0f)
+            return;
+        OnPainUpdate.Invoke(pain);
     }
 }

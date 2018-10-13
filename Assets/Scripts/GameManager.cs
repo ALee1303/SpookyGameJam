@@ -1,27 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager> {
 
+    public GameObject VooDooPrefab;
 
 	// Use this for initialization
-	void Start ()
+	protected override void Awake ()
     {
-        ScoreManager.Instance.OnScoreUpdate += HandleScoreChanged;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+        base.Awake();
+        ScoreManager.Instance.OnScoreUpdate = HandleScoreChanged;
+        ScoreManager.Instance.OnPainUpdate = HandlePainChanged;
 	}
 
+    void OnSceneLoaded(Scene newScene, LoadSceneMode mode)
+    {
+
+    }
+
+	
     // TODO: talk to UI, etc
     void HandleScoreChanged(int newScore)
     {
         UIManager.Instance.UpdateScoreText(newScore);
     }
 
+    void HandlePainChanged(float newPain)
+    {
+        UIManager.Instance.UpdatePainSlider(newPain);
+        if (newPain >= 100.0f)
+            OnPainFull();
+    }
+
+    // TODO: End game logic
     public void OnPainFull()
     {
 

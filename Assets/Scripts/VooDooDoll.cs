@@ -13,6 +13,8 @@ public class VooDooDoll : MonoBehaviour
     {
         pain += deltaPain;
         Mathf.Clamp(pain, 0.0f, 100.0f);
+        if (pain >= 100.0f)
+            return;
         OnPainUpdate.Invoke(deltaPain);
     }
 
@@ -23,7 +25,8 @@ public class VooDooDoll : MonoBehaviour
         if (obstacle != null)
         {
             obstacle.Interact(this);
-            SFXPlayer.Instance.PlayClip(obstacle.Clip, collision.relativeVelocity.magnitude);
+            if (obstacle.Clip)
+                SFXPlayer.Instance.PlayClip(obstacle.Clip, collision.relativeVelocity.magnitude);
         }
     }
 }
