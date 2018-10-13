@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 114522826697566136}
   multiplierText: {fileID: 114293362853747524}
-  painSlider: {fileID: 0}
+  livesText: {fileID: 114387679623497950}
 --- !u!114 &114293362853747524
 MonoBehaviour:
   m_ObjectHideFlags: 1
