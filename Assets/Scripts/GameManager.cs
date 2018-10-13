@@ -74,6 +74,7 @@ public class GameManager : Singleton<GameManager>
                 HandleLoadScene("Title");
                 break;
             case GameState.Playing:
+                lives = 3;
                 HandleLoadScene("PinballBoardMain");
                 break;
             case GameState.GameOver:
