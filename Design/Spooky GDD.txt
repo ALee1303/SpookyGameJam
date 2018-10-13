@@ -1,0 +1,29 @@
+Spooky Ragdoll Pinball
+
+Player: Voodoo Doll instead of pinball
+Setting: Nightmare Pinball
+Goal: Torture the Voodoo Doll as much as possible
+
+Obstacles:
+Electric Bumper
+
+
+Programmers ToDo:
+Game State
+-Game Over
+-Game Start
+-UI/Score
+-Special Events
+
+Flipper Controls
+-Physics Based Kinematic
+-Set Min and Max angle
+-Input Manager Left and Right Arrow Keys
+
+RagDoll Art
+-Head
+-Upper Body
+-Lower Body
+-Left/Right Arms
+-Left/Right Legs (2 Segments)
+-Left/Right Foot
