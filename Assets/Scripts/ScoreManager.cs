@@ -8,7 +8,7 @@ public class ScoreManager : Singleton<ScoreManager>
     private int score;
     private float multiplier;
 
-    public UnityAction<int> OnScoreChanged;
+    public UnityAction<int> OnScoreUpdate;
 
     protected override void Awake()
     {
@@ -17,20 +17,13 @@ public class ScoreManager : Singleton<ScoreManager>
         multiplier = 1.0f;
     }
 
-    public void AddScore(float point)
+    public void UpdateScore(float scoreModifier)
     {
-        int deltascore = (int)(point * multiplier);
+        int deltascore = (int)(scoreModifier * multiplier);
         score += deltascore;
-        OnScoreChanged.Invoke(deltascore);
-    }
-
-    public void ReduceScore(float point)
-    {
-        int deltascore = (int)(point * multiplier);
-        score -= deltascore;
         if (score <= 0)
             score = 0;
-        OnScoreChanged.Invoke(-deltascore);
+        OnScoreUpdate.Invoke(deltascore);
     }
 
     public void UpdateMultiplier(float deltaMultiplier)
