@@ -7,27 +7,30 @@ public class Plunger : MonoBehaviour, IInteractable<VooDooDoll>
 
     [SerializeField] float pullbackSpeed = 5f, launchSpeed = 50f;
 
-    [SerializeField] float pullbackLimit = 0.3f;
+    [SerializeField] float pullbackLimit = 0.3f, currentPosY;
+
+    [SerializeField] Vector3 currentPos;
 
     // Use this for initialization
     void Start () {
-		
+        currentPosY = transform.position.y;
+        currentPos = transform.position;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.localScale = Vector3.Slerp(
-                transform.localScale,
-                new Vector3(1, pullbackLimit, 1),
+            transform.position = Vector3.Slerp(
+                currentPos,
+                new Vector3(currentPos.x, currentPos.y - pullbackLimit, currentPos.z),
                 Time.deltaTime * pullbackSpeed);
         }
         if (!Input.GetKey(KeyCode.DownArrow))
         {
-            transform.localScale = Vector3.Lerp(
-                transform.localScale,
-                new Vector3(1, 1, 1),
+            transform.position = Vector3.Lerp(
+                currentPos,
+                new Vector3(currentPos.x, currentPos.y, currentPos.z),
                 Time.deltaTime * launchSpeed);
         }
 	}
