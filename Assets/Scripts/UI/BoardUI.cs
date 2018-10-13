@@ -16,11 +16,11 @@ public class BoardUI : UIController {
 
     public void UpdateScoreText(int newScore)
     {
-        scoreText.text = "TEARS: " + newScore.ToString(); 
+        scoreText.text = "Tears: " + newScore.ToString(); 
     }
     public void UpdateMultiplierText(float newMult)
     {
-        multiplierText.text = newMult.ToString("0.0");
+        multiplierText.text = "Multiplier: x" + newMult.ToString("0.0");
     }
     public void UpdatePainSlider(float newPain)
     {
