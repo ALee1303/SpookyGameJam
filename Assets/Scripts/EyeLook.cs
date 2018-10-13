@@ -34,7 +34,6 @@ public class EyeLook : MonoBehaviour {
             targetLoc = origin + displacement;
         }
         this.transform.position = Vector2.MoveTowards(this.transform.position, targetLoc, speed * Time.deltaTime);
-        //transform.Translate(((Vector3)targetLoc - this.transform.position) * speed * Time.deltaTime);
     }
 
 

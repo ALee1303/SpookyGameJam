@@ -23,7 +23,7 @@ public class ScoreManager : Singleton<ScoreManager>
         score += deltascore;
         if (score <= 0)
             score = 0;
-        OnScoreUpdate.Invoke(deltascore);
+        OnScoreUpdate.Invoke(score);
     }
 
     public void UpdateMultiplier(float deltaMultiplier)

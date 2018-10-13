@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager> {
 
-    ScoreManager scoreManager;
-
 
 	// Use this for initialization
 	void Start ()
@@ -19,7 +17,12 @@ public class GameManager : Singleton<GameManager> {
 	}
 
     // TODO: talk to UI, etc
-    void HandleScoreChanged(int deltaScore)
+    void HandleScoreChanged(int newScore)
+    {
+        UIManager.Instance.UpdateScoreText(newScore);
+    }
+
+    public void OnPainFull()
     {
 
     }
