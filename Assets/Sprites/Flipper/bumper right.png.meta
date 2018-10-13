@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1794c6d6ba567418e82d95081d6e0acc
+guid: 82409fc1865004e24b761796279b340d
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -45,12 +45,12 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 350
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0.1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -60,51 +60,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Standalone
-    maxTextureSize: 512
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 512
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 512
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -117,9 +73,37 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline: []
-    physicsShape: []
+    physicsShape:
+    - - {x: 120, y: -71}
+      - {x: 162, y: -65}
+      - {x: 195, y: -35}
+      - {x: 203, y: -7}
+      - {x: 203, y: 28}
+      - {x: 184, y: 51}
+      - {x: 164, y: 68}
+      - {x: 141, y: 79}
+      - {x: 53, y: 91}
+      - {x: -23, y: 91}
+      - {x: -126, y: 77}
+      - {x: -157, y: 52}
+      - {x: -194, y: -3}
+      - {x: -194, y: -22}
+      - {x: -131, y: -10}
+      - {x: -138, y: -33}
+      - {x: -132, y: -37}
+      - {x: -117, y: -49}
+      - {x: -113, y: -69}
+      - {x: -82, y: -64}
+      - {x: -38, y: -41}
+      - {x: -37, y: -70}
+      - {x: -33, y: -94}
+      - {x: -19, y: -94}
+      - {x: 8, y: -80}
+      - {x: 18, y: -64}
+      - {x: 80, y: -72}
+      - {x: 104, y: -75}
     bones: []
-    spriteID: c7d8852e6f3204a9db93efd11d9f954e
+    spriteID: 1f23c67b6be7a438e918be64f68c00d4
     vertices: []
     indices: 
     edges: []
