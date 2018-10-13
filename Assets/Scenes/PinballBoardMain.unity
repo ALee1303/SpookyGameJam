@@ -24195,6 +24195,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114243923510025844, guid: 28b8911d7805c4be9acddd64b1bf9fe6,
+        type: 2}
+      propertyPath: gameOverText
+      value: 
+      objectReference: {fileID: 2019735634}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28b8911d7805c4be9acddd64b1bf9fe6, type: 2}
   m_IsPrefabAsset: 0

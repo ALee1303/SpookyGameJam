@@ -35,4 +35,10 @@ public class ScoreManager : MonoBehaviour
     {
         multiplier = 0.0f;
     }
+
+    private void OnDestroy()
+    {
+        OnScoreUpdate = null;
+        OnMultiplierUpdate = null;
+    }
 }

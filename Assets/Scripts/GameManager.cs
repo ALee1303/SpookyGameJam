@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public enum GameState { Title, Playing, GameOver };
 
 public class GameManager : Singleton<GameManager>
 {
+    public UnityAction OnGameOver;
 
     public GameObject VooDooPrefab;
 
@@ -15,6 +17,9 @@ public class GameManager : Singleton<GameManager>
     public ScoreManager ScoreManager;
 
     Scene currentScene;
+
+    [SerializeField]
+    float restartDelay = 3.0f;
 
     private int lives = 3;
 
@@ -35,6 +40,7 @@ public class GameManager : Singleton<GameManager>
 
     public void ChangeState(GameState newState)
     {
+        // must change Property
         GameState = newState;
     }
 
@@ -49,7 +55,6 @@ public class GameManager : Singleton<GameManager>
         // TODO: Title Screen
         SceneManager.sceneLoaded += OnSceneLoaded;
         HandleLoadScene("Title");
-        gameState = GameState.Title;
     }
 
     void HandleLoadScene(string newScene)
@@ -72,8 +77,16 @@ public class GameManager : Singleton<GameManager>
                 HandleLoadScene("PinballBoardMain");
                 break;
             case GameState.GameOver:
+                OnGameOver.Invoke();
+                StartCoroutine(RestartGame());
                 break;
         }
+    }
+
+    IEnumerator RestartGame()
+    {
+        yield return new WaitForSeconds(restartDelay);
+        ChangeState(GameState.Title);
     }
 
     public void OnDollDestroyed()
@@ -85,14 +98,9 @@ public class GameManager : Singleton<GameManager>
             boardUI.UpdateLivesText(lives);
         if (lives == 0)
         {
-            GameOver();
+            // calls StateChanged which calls HandleGameOver
+            ChangeState(GameState.GameOver);
         }
-    }
-
-    void GameOver()
-    {
-        GameState = GameState.GameOver;
-
     }
 
     void OnSceneLoaded(Scene newScene, LoadSceneMode mode)
@@ -122,5 +130,4 @@ public class GameManager : Singleton<GameManager>
         if (boardUI)
             boardUI.UpdateMultiplierText(newMulti);
     }
-
 }

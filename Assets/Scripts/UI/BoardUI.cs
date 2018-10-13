@@ -14,6 +14,14 @@ public class BoardUI : UIController {
     [SerializeField]
     Text livesText;
 
+    [SerializeField]
+    Text gameOverText;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        GameManager.Instance.OnGameOver += HandleGameOver;
+    }
 
 
     public void UpdateScoreText(int newScore)
@@ -27,5 +35,15 @@ public class BoardUI : UIController {
     public void UpdateLivesText(int newLives)
     {
         livesText.text = "x" + newLives.ToString();
+    }
+
+    public void HandleGameOver()
+    {
+        gameOverText.enabled = true;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnGameOver -= HandleGameOver;
     }
 }
