@@ -9,15 +9,13 @@ public class Plunger : MonoBehaviour, IInteractable<VooDooDoll>
 
     [SerializeField] float pullbackLimit = 0.3f;
 
-    [SerializeField] Rigidbody2D rb;
-
     // Use this for initialization
     void Start () {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.localScale = Vector3.Slerp(
@@ -31,10 +29,6 @@ public class Plunger : MonoBehaviour, IInteractable<VooDooDoll>
                 transform.localScale,
                 new Vector3(1, 1, 1),
                 Time.deltaTime * launchSpeed);
-        }
-        if (Input.GetKeyUp(KeyCode.DownArrow))
-        {
-            rb.AddForce(Vector2.up * 2000);
         }
 	}
 
