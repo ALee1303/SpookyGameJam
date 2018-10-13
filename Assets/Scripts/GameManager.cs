@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager> {
 
-
     ScoreManager scoreManager;
 
 
 	// Use this for initialization
 	void Start ()
     {
-        ScoreManager.Instance.OnScoreChanged += HandleScoreChanged;
+        ScoreManager.Instance.OnScoreUpdate += HandleScoreChanged;
 	}
 	
 	// Update is called once per frame

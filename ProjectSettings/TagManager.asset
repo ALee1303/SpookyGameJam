@@ -7,6 +7,9 @@ TagManager:
   - Flipper
   - LeftFlipper
   - RightFlipper
+  - FollowPoint
+  - Pupil
+  - Voodoo
   layers:
   - Default
   - TransparentFX

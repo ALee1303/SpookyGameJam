@@ -2,38 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Needle : MonoBehaviour, IInteractable<VooDooDoll> 
+public class Needle : MonoBehaviour
 {
-    [SerializeField]
-    Collider2D halfCollider;
-    [SerializeField]
-    Collider2D fullCollider;
 
     [SerializeField]
     float multiplierChanger = 0.1f;
 
-    void Awake()
+    [SerializeField]
+    float mass = 1.0f;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        halfCollider.enabled = true;
-        fullCollider.enabled = false;
-        // added to score manager
+        // get voodoo doll
+        VooDooDoll doll = collision.transform.GetComponent<VooDooDoll>();
+        if (doll)
+        {
+            ScoreManager.Instance.UpdateMultiplier(multiplierChanger);
+            attachNeedle(doll.transform);
+        }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    private void attachNeedle(Transform bodyPart)
     {
-        VooDooDoll doll = col.transform.GetComponent<VooDooDoll>();
-        //exit if collision wasnt with VooDoo
-        if (!doll)
-            return;
         // make needle follow player
-        this.transform.parent = doll.transform;
-        //change collider
-        halfCollider.enabled = false;
-        fullCollider.enabled = true;
-    }
-
-    public void Interact(VooDooDoll instigator)
-    {
-        ScoreManager.Instance.UpdateMultiplier(multiplierChanger);
+        this.transform.parent.parent = bodyPart.transform;
+        bodyPart.GetComponent<Rigidbody2D>().mass += mass;
+        this.GetComponent<Collider2D>().enabled = false;
     }
 }

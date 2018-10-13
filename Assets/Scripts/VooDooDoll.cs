@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class VooDooDoll : MonoBehaviour 
 {
-
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // interact with VooDooDoll Interactable
-        IInteractable<VooDooDoll> collidedInteract = collision.transform.GetComponent<IInteractable<VooDooDoll>>();
-        if (collidedInteract != null)
+        IInteractable<VooDooDoll> dollInteract = collision.transform.GetComponent<IInteractable<VooDooDoll>>();
+        if (dollInteract != null)
         {
-            collidedInteract.Interact(this);
+            dollInteract.Interact(this);
         }
     }
-
 }
