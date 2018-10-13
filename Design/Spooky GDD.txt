@@ -6,6 +6,9 @@ Goal: Torture the Voodoo Doll as much as possible
 
 Obstacles:
 Electric Bumper
+Spike Bumpers
+Iron Maden
+Hot Coal Pinball Launcher
 
 
 Programmers ToDo:
@@ -13,7 +16,7 @@ Game State
 -Game Over
 -Game Start
 -UI/Score
--Special Events
+-Special Events (Spooky Modes)
 
 Flipper Controls
 -Physics Based Kinematic
@@ -27,3 +30,25 @@ RagDoll Art
 -Left/Right Arms
 -Left/Right Legs (2 Segments)
 -Left/Right Foot
+
+Flipper Art
+-Left and Right Flipper
+-Maybe an EyeBall
+
+UI Art
+-Pain-O-Meter
+-Lives Icon
+
+
+Gameboard Art
+-Left/Right Flapper
+-Hot Coal Launcher Plunger
+-Hot Coal Launcher Spring
+-Background
+-Spike Bumpers
+-Sewing Pins Multiplier
+-Iron Maiden
+-Electric Barb Wire Linear Bumper
+-Tombstone with names of loved ones
+-Holes with tentacles coming out of them
+
