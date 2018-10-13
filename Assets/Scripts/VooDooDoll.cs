@@ -7,10 +7,11 @@ public class VooDooDoll : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // interact with VooDooDoll Interactable
-        IInteractable<VooDooDoll> dollInteract = collision.transform.GetComponent<IInteractable<VooDooDoll>>();
-        if (dollInteract != null)
+        ObstacleBase obstacle = collision.transform.GetComponent<ObstacleBase>();
+        if (obstacle != null)
         {
-            dollInteract.Interact(this);
+            obstacle.Interact(this);
+            SFXPlayer.Instance.PlayClip(obstacle.Clip, collision.relativeVelocity.magnitude);
         }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Needle : MonoBehaviour
 {
+    bool isStuck = false;
 
     [SerializeField]
     float multiplierChanger = 0.1f;
@@ -13,12 +14,15 @@ public class Needle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isStuck)
+            return;
         // get voodoo doll
         VooDooDoll doll = collision.transform.GetComponent<VooDooDoll>();
         if (doll)
         {
             ScoreManager.Instance.UpdateMultiplier(multiplierChanger);
             attachNeedle(doll.transform);
+            isStuck = true;
         }
     }
 

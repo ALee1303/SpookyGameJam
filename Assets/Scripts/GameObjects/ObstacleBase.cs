@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ObstacleBase : MonoBehaviour, IInteractable<VooDooDoll> 
+public abstract class ObstacleBase : MonoBehaviour
 {
     [SerializeField]
     protected float scoreModifier;
@@ -10,11 +10,7 @@ public abstract class ObstacleBase : MonoBehaviour, IInteractable<VooDooDoll>
     [SerializeField]
     protected AudioClip clip;
 
-    public virtual void OnCollisionEnter2D(Collision2D collision)
-    {
-        // play clip based on velocity
-        SFXPlayer.Instance.PlayClip(clip, collision.relativeVelocity.magnitude);
-    }
+    public AudioClip Clip{ get { return clip; }}
 
     public virtual void Interact(VooDooDoll instigator)
     {
