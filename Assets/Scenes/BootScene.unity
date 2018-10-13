@@ -143,6 +143,7 @@ MonoBehaviour:
   VooDooPrefab: {fileID: 0}
   CurrentUI: {fileID: 0}
   ScoreManager: {fileID: 0}
+  gameState: 0
 --- !u!4 &1011942002
 Transform:
   m_ObjectHideFlags: 0

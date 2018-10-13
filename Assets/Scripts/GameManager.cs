@@ -33,6 +33,11 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public void ChangeState(GameState newState)
+    {
+        GameState = newState;
+    }
+
 	// Use this for initialization
 	protected override void Awake()
     {
@@ -44,6 +49,7 @@ public class GameManager : Singleton<GameManager>
         // TODO: Title Screen
         SceneManager.sceneLoaded += OnSceneLoaded;
         HandleLoadScene("Title");
+        gameState = GameState.Title;
     }
 
     void HandleLoadScene(string newScene)
