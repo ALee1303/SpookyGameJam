@@ -6,8 +6,9 @@ using UnityEngine;
 public class FlipperAnimation : MonoBehaviour {
 
     public KeyCode key = new KeyCode();
-	// Use this for initialization
-	void Start () {
+    AudioSource audioData;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -19,6 +20,8 @@ public class FlipperAnimation : MonoBehaviour {
             //gameObject.GetComponent(DOTweenAnimation).
 
             DOTween.PlayForward(gameObject,"flip");
+            audioData = GetComponent<AudioSource>();
+            audioData.Play(0);
 
             print("key was pressed");
         }

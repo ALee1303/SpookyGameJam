@@ -16,7 +16,7 @@ public class BoardUI : UIController {
 
     public void UpdateScoreText(int newScore)
     {
-        scoreText.text = "SCORE: " + newScore.ToString(); 
+        scoreText.text = "TEARS: " + newScore.ToString(); 
     }
     public void UpdatePainSlider(float newPain)
     {
