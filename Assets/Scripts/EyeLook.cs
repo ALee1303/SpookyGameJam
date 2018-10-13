@@ -22,17 +22,22 @@ public class EyeLook : MonoBehaviour {
     void FixedUpdate()
     {
         Vector2 targetLoc;
-        Vector2 direction = (Vector2)doll.transform.position - origin;
-        if (direction.magnitude < eyeRadius)
+        Vector2 direction = new Vector2(0,0);
+        if (doll != null)
         {
-            targetLoc = doll.transform.position;
+            direction = (Vector2)doll.transform.position - origin;
+            if (direction.magnitude < eyeRadius)
+            {
+                targetLoc = doll.transform.position;
+            }
+            else
+            {
+                Vector2 displacement = Vector2.ClampMagnitude(direction, eyeRadius);
+                targetLoc = origin + displacement;
+            }
+
+            this.transform.position = Vector2.MoveTowards(this.transform.position, targetLoc, speed * Time.deltaTime);
         }
-        else
-        {
-            Vector2 displacement = Vector2.ClampMagnitude(direction, eyeRadius);
-            targetLoc = origin + displacement;
-        }
-        this.transform.position = Vector2.MoveTowards(this.transform.position, targetLoc, speed * Time.deltaTime);
     }
 
 

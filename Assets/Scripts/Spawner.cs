@@ -31,6 +31,7 @@ public class Spawner : MonoBehaviour
             return;
         if (isDestryoing)
             return;
+        GetComponent<AudioSource>().Play();
         StartCoroutine(DestroyDoll());
     }
 
