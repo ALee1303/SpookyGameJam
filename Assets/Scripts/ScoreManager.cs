@@ -6,20 +6,35 @@ using UnityEngine.Events;
 public class ScoreManager : Singleton<ScoreManager>
 {
     private int score;
+    private float multiplier;
 
     public UnityAction<int> OnScoreChanged;
 
-    public void AddScore(int point)
+    protected override void Awake()
     {
-        score += point;
-        OnScoreChanged.Invoke(point);
+        base.Awake();
+        score = 0;
+        multiplier = 1.0f;
     }
 
-    public void ReduceScore(int point)
+    public void AddScore(float point)
     {
-        score -= point;
+        int deltascore = (int)(point * multiplier);
+        score += deltascore;
+        OnScoreChanged.Invoke(deltascore);
+    }
+
+    public void ReduceScore(float point)
+    {
+        int deltascore = (int)(point * multiplier);
+        score -= deltascore;
         if (score <= 0)
             score = 0;
-        OnScoreChanged.Invoke(-point);
+        OnScoreChanged.Invoke(-deltascore);
+    }
+
+    public void UpdateMultiplier(float deltaMultiplier)
+    {
+        multiplier += deltaMultiplier;
     }
 }
