@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum GameState { Playing, GameOver };
+public enum GameState { Title, Playing, GameOver };
 
 public class GameManager : Singleton<GameManager>
 {
@@ -28,8 +28,9 @@ public class GameManager : Singleton<GameManager>
 
     private void OnEnable()
     {
+        // TODO: Title Screen
         SceneManager.sceneLoaded += OnSceneLoaded;
-        if (SceneManager.GetActiveScene().name != "PinballBoardMain")
+        if (GameState != GameState.Playing)
             SceneManager.LoadScene("PinballBoardMain",LoadSceneMode.Additive);
     }
 
@@ -58,6 +59,7 @@ public class GameManager : Singleton<GameManager>
         {
             ScoreManager.OnScoreUpdate += HandleScoreUpdate;
             ScoreManager.OnMultiplierUpdate += HandleMultiUpdate;
+            GameState = GameState.Playing;
         }
     }
 
