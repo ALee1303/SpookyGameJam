@@ -913,13 +913,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Alex Lee
-
-    Andrew Allen
-
-    Eric Gleiser
-
-    Nick Alcala'
+  m_Text: "Alex \"Seoung Yeon\" Lee \nEric Gleiser\nNicolas Alcala\nAndrew Allen"
 --- !u!222 &1183781384
 CanvasRenderer:
   m_ObjectHideFlags: 0
