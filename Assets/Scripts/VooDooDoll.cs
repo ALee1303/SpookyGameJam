@@ -6,6 +6,7 @@ public class VooDooDoll : MonoBehaviour
 {
 
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // interact with VooDooDoll Interactable

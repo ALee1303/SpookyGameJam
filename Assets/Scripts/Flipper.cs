@@ -6,7 +6,7 @@ public class Flipper : MonoBehaviour {
 
     BoxCollider2D boxCol;
 
-    public float flipperSpeedUp = 20f, flipperSpeedDown = 20f;
+    [SerializeField] float flipperSpeedUp = 20f, flipperSpeedDown = 20f;
 
 	// Use this for initialization
 	void Start () {
