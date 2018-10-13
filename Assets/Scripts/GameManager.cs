@@ -22,21 +22,29 @@ public class GameManager : Singleton<GameManager> {
     {
         if (newScene.name == "PinballBoardMain")
         {
-            ScoreManager.OnScoreUpdate += HandleScoreChanged;
-            ScoreManager.OnPainUpdate += HandlePainChanged;
+            ScoreManager.OnScoreUpdate += HandleScoreUpdate;
+            ScoreManager.OnMultiplierUpdate += HandleMultiUpdate;
+            ScoreManager.OnPainUpdate += HandlePainUpdate;
         }
     }
 
 	
     // TODO: talk to UI, etc
-    void HandleScoreChanged(int newScore)
+    void HandleScoreUpdate(int newScore)
     {
         BoardUI boardUI = (BoardUI)CurrentUI;
         if (boardUI)
             boardUI.UpdateScoreText(newScore);
     }
 
-    void HandlePainChanged(float newPain)
+    void HandleMultiUpdate(float newMulti)
+    {
+        BoardUI boardUI = (BoardUI)CurrentUI;
+        if (boardUI)
+            boardUI.UpdateMultiplierText(newMulti);
+    }
+
+    void HandlePainUpdate(float newPain)
     {
         BoardUI boardUI = (BoardUI)CurrentUI;
         if (boardUI)

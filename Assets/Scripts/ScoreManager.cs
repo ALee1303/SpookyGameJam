@@ -10,6 +10,7 @@ public class ScoreManager : MonoBehaviour
     private float pain = 0.0f;
 
     public UnityAction<int> OnScoreUpdate;
+    public UnityAction<float> OnMultiplierUpdate;
     public UnityAction<float> OnPainUpdate;
 
     private void Awake()
@@ -29,6 +30,7 @@ public class ScoreManager : MonoBehaviour
     public void UpdateMultiplier(float deltaMultiplier)
     {
         multiplier += deltaMultiplier;
+        OnMultiplierUpdate(multiplier);
     }
 
     public void UpdatePain(float deltaPain)
