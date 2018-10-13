@@ -375,22 +375,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 251762712}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &535413985 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1310871450768482, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0,
-    type: 2}
-  m_PrefabInternal: {fileID: 647133903}
---- !u!114 &535413992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 535413985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c5b6041f2b34f9b97c553298b34692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &647133903
 Prefab:
   m_ObjectHideFlags: 0
@@ -1354,22 +1338,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1304422125 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1789249401124854, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0,
-    type: 2}
-  m_PrefabInternal: {fileID: 647133903}
---- !u!114 &1304422130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1304422125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c5b6041f2b34f9b97c553298b34692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1363543940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,22 +1436,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -102.58201}
---- !u!1 &1435622500 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1781540950948750, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0,
-    type: 2}
-  m_PrefabInternal: {fileID: 647133903}
---- !u!114 &1435622507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1435622500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c5b6041f2b34f9b97c553298b34692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1459350006
 Prefab:
   m_ObjectHideFlags: 0
@@ -1906,38 +1858,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -102.58201}
---- !u!1 &1871562738 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1714682417490510, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0,
-    type: 2}
-  m_PrefabInternal: {fileID: 647133903}
---- !u!114 &1871562745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1871562738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c5b6041f2b34f9b97c553298b34692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1965081135 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1501046976490234, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0,
-    type: 2}
-  m_PrefabInternal: {fileID: 647133903}
---- !u!114 &1965081142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1965081135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c5b6041f2b34f9b97c553298b34692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1972132478
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,19 +1956,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -167.845}
---- !u!1 &1979605926 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1598242475649756, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0,
-    type: 2}
-  m_PrefabInternal: {fileID: 647133903}
---- !u!114 &1979605933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1979605926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c5b6041f2b34f9b97c553298b34692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
