@@ -30,4 +30,9 @@ public class ScoreManager : MonoBehaviour
         multiplier += deltaMultiplier;
         OnMultiplierUpdate(multiplier);
     }
+
+    public void HandleDollDestroyed()
+    {
+        multiplier = 0.0f;
+    }
 }

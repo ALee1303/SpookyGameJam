@@ -16,33 +16,65 @@ public class GameManager : Singleton<GameManager>
 
     Scene currentScene;
 
-    public GameState GameState { get; private set; }
-
     private int lives = 3;
+
+    public GameState gameState;
+
+    public GameState GameState
+    {
+        get { return gameState; }
+        private set 
+        {
+            if (gameState != value)
+            {
+                gameState = value;
+                StateChanged(GameState);
+            }
+        }
+    }
 
 	// Use this for initialization
 	protected override void Awake()
     {
         base.Awake();
-        // TODO: move when title screen is available
-        GameState = GameState.Playing;
 	}
 
     private void OnEnable()
     {
         // TODO: Title Screen
         SceneManager.sceneLoaded += OnSceneLoaded;
-        if (GameState != GameState.Playing)
-        {
-            SceneManager.LoadSceneAsync("PinballBoardMain", LoadSceneMode.Additive);
-        }
+        HandleLoadScene("Title");
     }
 
+    void HandleLoadScene(string newScene)
+    {
+        if (currentScene.name != null)
+        {
+            SceneManager.UnloadSceneAsync(currentScene);
+        }
+        SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Additive);
+    }
+
+    void StateChanged(GameState newState)
+    {
+        switch(newState)
+        {
+            case GameState.Title:
+                HandleLoadScene("Title");
+                break;
+            case GameState.Playing:
+                HandleLoadScene("PinballBoardMain");
+                break;
+            case GameState.GameOver:
+                break;
+        }
+    }
 
     public void OnDollDestroyed()
     {
         lives -= 1;
         BoardUI boardUI = (BoardUI)CurrentUI;
+        ScoreManager.HandleDollDestroyed();
         if (boardUI)
             boardUI.UpdateLivesText(lives);
         if (lives == 0)
@@ -51,19 +83,24 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    // TODO: gameover logic, UI change, Restart, ETC
     void GameOver()
     {
         GameState = GameState.GameOver;
+
     }
 
     void OnSceneLoaded(Scene newScene, LoadSceneMode mode)
     {
+        if (newScene.name == "Title")
+        {
+
+        }
         if (newScene.name == "PinballBoardMain")
         {
             ScoreManager.OnScoreUpdate += HandleScoreUpdate;
             ScoreManager.OnMultiplierUpdate += HandleMultiUpdate;
             GameState = GameState.Playing;
+            currentScene = newScene;
         }
     }
 
