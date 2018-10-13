@@ -7,29 +7,40 @@ public class GameManager : Singleton<GameManager> {
 
     public GameObject VooDooPrefab;
 
+    public UIController CurrentUI;
+
+    public ScoreManager ScoreManager;
+
 	// Use this for initialization
 	protected override void Awake ()
     {
         base.Awake();
-        ScoreManager.Instance.OnScoreUpdate = HandleScoreChanged;
-        ScoreManager.Instance.OnPainUpdate = HandlePainChanged;
+        SceneManager.sceneLoaded += OnSceneLoaded;
 	}
 
     void OnSceneLoaded(Scene newScene, LoadSceneMode mode)
     {
-
+        if (newScene.name == "PinballBoardMain")
+        {
+            ScoreManager.OnScoreUpdate += HandleScoreChanged;
+            ScoreManager.OnPainUpdate += HandlePainChanged;
+        }
     }
 
 	
     // TODO: talk to UI, etc
     void HandleScoreChanged(int newScore)
     {
-        UIManager.Instance.UpdateScoreText(newScore);
+        BoardUI boardUI = (BoardUI)CurrentUI;
+        if (boardUI)
+            boardUI.UpdateScoreText(newScore);
     }
 
     void HandlePainChanged(float newPain)
     {
-        UIManager.Instance.UpdatePainSlider(newPain);
+        BoardUI boardUI = (BoardUI)CurrentUI;
+        if (boardUI)
+            boardUI.UpdatePainSlider(newPain);
         if (newPain >= 100.0f)
             OnPainFull();
     }

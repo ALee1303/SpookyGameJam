@@ -20,7 +20,7 @@ public class Needle : MonoBehaviour
         VooDooDoll doll = collision.transform.GetComponent<VooDooDoll>();
         if (doll)
         {
-            ScoreManager.Instance.UpdateMultiplier(multiplierChanger);
+            GameManager.Instance.ScoreManager.UpdateMultiplier(multiplierChanger);
             attachNeedle(doll.transform);
             isStuck = true;
         }

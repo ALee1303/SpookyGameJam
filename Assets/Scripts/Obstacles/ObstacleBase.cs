@@ -15,6 +15,6 @@ public class ObstacleBase : MonoBehaviour
 
     public virtual void Interact(VooDooDoll instigator)
     {
-        ScoreManager.Instance.UpdateScore(scoreModifier);
+        GameManager.Instance.ScoreManager.UpdateScore(scoreModifier);
     }
 }

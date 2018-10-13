@@ -12,7 +12,7 @@ public class Singleton<T> : MonoBehaviour where T: Singleton<T> {
         {
             if (!instance)
             {
-                GameObject sm = new GameObject("ScoreManager");
+                GameObject sm = new GameObject(typeof(T).ToString());
                 sm.AddComponent<T>();
                 DontDestroyOnLoad(sm);
             }

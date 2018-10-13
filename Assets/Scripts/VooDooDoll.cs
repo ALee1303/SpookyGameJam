@@ -6,18 +6,6 @@ using UnityEngine.Events;
 public class VooDooDoll : MonoBehaviour 
 {
 
-    float pain = 0.0f;
-    public UnityAction<float> OnPainUpdate;
-
-    public void UpdatePain(float deltaPain)
-    {
-        pain += deltaPain;
-        Mathf.Clamp(pain, 0.0f, 100.0f);
-        if (pain >= 100.0f)
-            return;
-        OnPainUpdate.Invoke(deltaPain);
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // interact with VooDooDoll Interactable

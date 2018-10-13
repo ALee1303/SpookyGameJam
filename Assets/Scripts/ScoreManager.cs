@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ScoreManager : Singleton<ScoreManager>
+public class ScoreManager : MonoBehaviour
 {
     private int score = 0;
     private float multiplier = 1.0f;
@@ -12,9 +12,9 @@ public class ScoreManager : Singleton<ScoreManager>
     public UnityAction<int> OnScoreUpdate;
     public UnityAction<float> OnPainUpdate;
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
+        GameManager.Instance.ScoreManager = this;
     }
 
     public void UpdateScore(float scoreModifier)
