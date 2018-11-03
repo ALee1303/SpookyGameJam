@@ -5,9 +5,9 @@ Repository for Unity3D source project of Pins & Needles, first ever ragdoll pinb
 Check out Eric's itch.io page for the release: https://egleiser.itch.io/pins-needles
 
 ## How To Play
-Down Arrow: Launch Doll
-Left Arrow: Move Left Bumper
-Right Arrow: Move Right Bumper
+  Down Arrow: Launch Doll,
+  Left Arrow: Move Left Bumper,
+  Right Arrow: Move Right Bumper
 
 Needles adds score multiplier and mass to the doll when attached.
 
@@ -16,7 +16,7 @@ Created by Alex Lee(Programmer), Eric Gleiser(Sound&Design), and Nicolas Alcala(
 Special thanks and credit to Andrew Allen who had to leave early for personal emergency but was credited for participating in initial idea development and early repository setup.
 
 ## Overview
-This game was created during my first ever game jam with three people in 24 hours.
+This game was created during my first ever game jam by three people in 24 hours.
 
 ## Code Overview
 As a programmer, I created script for core framework which established the game loop and game logic, enabled UI control, and implemented specific game mechanics such as needle attachment and eyeball animation. Here are some overviews about my contribution.
@@ -24,11 +24,20 @@ As a programmer, I created script for core framework which established the game 
   * [GameManager](#gamemanager)
   * [ScoreManager](#scoremanager)
   * [UI Control](#ui-control)
-  * [Eyeball Movement]
-  * [Needle]
+  * [Eyeball Movement](eyeball-movement)
+  * [Needle](needle)
   
 ### GameManager
-  
+
+
 ### ScoreManager
-  
+
+
 ### UI Control
+
+
+### Eyeball Movement
+
+
+### Needle
+
