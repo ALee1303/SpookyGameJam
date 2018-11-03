@@ -131,4 +131,10 @@ public class GameManager : Singleton<GameManager>
         if (boardUI)
             boardUI.UpdateMultiplierText(newMulti);
     }
+
+    protected override void OnDestroy()
+    {
+        OnGameOver = null;
+        base.OnDestroy();
+    }
 }

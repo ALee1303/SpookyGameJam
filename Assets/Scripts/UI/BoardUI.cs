@@ -41,10 +41,4 @@ public class BoardUI : UIController {
     {
         gameOverText.gameObject.SetActive(true);
     }
-
-    private void OnDestroy()
-    {
-        if (GameManager.Instance)
-            GameManager.Instance.OnGameOver -= HandleGameOver;
-    }
 }
