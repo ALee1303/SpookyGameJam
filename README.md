@@ -21,15 +21,14 @@ This game was created during my first ever game jam with three people in 24 hour
 ## Code Overview
 As a programmer, I created script for core framework which established the game loop and game logic, enabled UI control, and implemented specific game mechanics such as needle attachment and eyeball animation. Here are some overviews about my contribution.
 
-* [GameManager](#gamemanager)
-* [ScoreManager](#scoremanager)
-* [UI Control](#ui-control)
-
+  * [GameManager](#gamemanager)
+  * [ScoreManager](#scoremanager)
+  * [UI Control](#ui-control)
+  * [Eyeball Movement]
+  * [Needle]
   
-  ### GameManager
+### GameManager
   
-  ### ScoreManager
+### ScoreManager
   
-  ### UI Control
-  
-  
+### UI Control
