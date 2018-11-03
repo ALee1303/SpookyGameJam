@@ -44,6 +44,7 @@ public class BoardUI : UIController {
 
     private void OnDestroy()
     {
-        GameManager.Instance.OnGameOver -= HandleGameOver;
+        if (GameManager.Instance)
+            GameManager.Instance.OnGameOver -= HandleGameOver;
     }
 }
