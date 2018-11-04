@@ -14,7 +14,7 @@ Needles adds score multiplier and mass to the doll when attached.
 # Overview and Credit
 This game was created during my first ever game jam by three people in 24 hours.
 
-**Alex Lee:** Game Loop and Logic, UI Control and Gameplay Mechanics ([Click](Assets/Scripts) for detail on my contribution)
+**Alex Lee:** Game Loop and Logic, UI Control and Gameplay Mechanics ([Click](MyContribution.md) for detail on my contribution)
 
 **Eric Gleiser:** Sound, Animation, Level Design and Gameplay Mechanics
 
