@@ -3,6 +3,7 @@ As a programmer, I created script for core framework which established the game 
 
 The game jam required us not to use old source from previous projects. Therefore I had to adjust my workflow and code design accordingly with situation to succesfully complete the working build in time. Following lists are overviews about the approach I took to accomplish my task.
 
+<!--ts-->
 * Handling Game Loop and Logic:
   * [GameManager](#gamemanager)
   * [ScoreManager](#scoremanager)
@@ -12,6 +13,7 @@ The game jam required us not to use old source from previous projects. Therefore
   * [Needle](#needle)
   * [Obstacles](#obstacles)
   * [Spawner](#Spawner)
+<!--te-->
 
 -----------------------------------------------------
 ## Handling Game Loop and Logic
@@ -55,7 +57,7 @@ The game jam required us not to use old source from previous projects. Therefore
 
   For TitleUI, no control was needed since everything was animated by our designer and all we needed was an input to transition into the playable scene. Since our designer was responsible for the input and he chose not to create any Input Handling classes, I used the TitleUI as a simple hack to process the input from the player.
 
-  BoardUI needed to display the logic handled in ScoreManager as well as GameManager. To handle changes in both classes, the BoardUI has a set of function which is called by the GameManager class when specific update from ScoreManager is being handled, as well as one fuction subscribed to the event of the GameManager.
+  BoardUI needed to display the logic handled in ScoreManager as well as GameManager. To handle changes in both classes, the BoardUI has a set of function, which is called by the GameManager class when specific update from ScoreManager is being handled, as well as one fuction subscribed to the event of the GameManager.
 
   ```C#
   public void UpdateScoreText(int newScore)
@@ -80,7 +82,7 @@ The game jam required us not to use old source from previous projects. Therefore
 
 -----------------------------------------------------
 ## Gameplay Mechanics
-  ### Eyeball Movement([Assets/Scripts/Eyelook.cs](Assets/Scripts/Eyelook.cs))
+  ### Eyeball Movement([Assets/Scripts/EyeLook.cs](Assets/Scripts/EyeLook.cs))
   Our artist Nicolas wanted an eye that followed the doll around which I helped implement. Since the art asset was in 2D, a simple rotation towards the reference object could not be used. A simple 2D vector math algorithm was devised instead, which is called on fixed update of the Eyelook.cs script to update the movement every frame.
 
   ```C#
