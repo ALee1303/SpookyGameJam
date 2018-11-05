@@ -4,38 +4,49 @@ using UnityEngine;
 
 public class EyeLook : MonoBehaviour {
 
-    public Transform doll;
+    // reference of the doll to follow
+    public Transform Doll;
+    
+    // boundary of the eye movement
+    [SerializeField]
+    private float eyeRadius = 3.0f;
 
-    public Vector2 origin;
+    // how faast the eye follows the doll
+    [SerializeField]
+    private float speed = 10.0f;
 
-    public float eyeRadius = 3.0f;
-
-    public float viewRange = 10.0f;
-
-    public float speed = 10.0f;
+    // center of the eye
+    private Vector2 origin;
 
     private void Awake()
     {
+        // set the origin to the middle
         origin = this.transform.position;
     }
 
     void FixedUpdate()
     {
+        // point to move towards during this frame
         Vector2 targetLoc;
-        Vector2 direction = new Vector2(0,0);
-        if (doll != null)
+        // make sure theres a doll to follow
+        if (Doll != null)
         {
-            direction = (Vector2)doll.transform.position - origin;
+            // gets the direction and distance between the doll and the eye
+            Vector2 direction = (Vector2)Doll.transform.position - origin;
+            // if doll is inside the radius of an eye, put the eyeball directly below the doll
             if (direction.magnitude < eyeRadius)
             {
-                targetLoc = doll.transform.position;
+                targetLoc = Doll.transform.position;
             }
+            // if doll is outside of the boundary of an eye
             else
             {
+                // clamp the displacement to the edge of the eye radius
                 Vector2 displacement = Vector2.ClampMagnitude(direction, eyeRadius);
+                // transform the target location
                 targetLoc = origin + displacement;
             }
-
+            // start moving the eye towards the target location
             this.transform.position = Vector2.MoveTowards(this.transform.position, targetLoc, speed * Time.deltaTime);
         }
     }
@@ -44,6 +55,5 @@ public class EyeLook : MonoBehaviour {
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(this.transform.position, eyeRadius);
-        Gizmos.DrawWireSphere(this.transform.position, viewRange);
     }
 }
