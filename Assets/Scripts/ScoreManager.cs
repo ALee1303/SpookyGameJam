@@ -16,6 +16,10 @@ public class ScoreManager : MonoBehaviour
         GameManager.Instance.ScoreManager = this;
     }
 
+    /// <summary>
+    /// called by obstacles when they collide with the doll
+    /// </summary>
+    /// <param name="scoreModifier">score each obstacles are worth</param>
     public void UpdateScore(float scoreModifier)
     {
         int deltascore = (int)(scoreModifier * multiplier);
@@ -25,12 +29,19 @@ public class ScoreManager : MonoBehaviour
         OnScoreUpdate.Invoke(score);
     }
 
+    /// <summary>
+    /// called by needle when colliding with the doll
+    /// </summary>
+    /// <param name="deltaMultiplier">multiplier of the attaached needle added to the player</param>
     public void UpdateMultiplier(float deltaMultiplier)
     {
         multiplier += deltaMultiplier;
         OnMultiplierUpdate.Invoke(multiplier);
     }
 
+    /// <summary>
+    /// Called by GameManager when dolls are destroyed
+    /// </summary>
     public void HandleDollDestroyed()
     {
         multiplier = 1.0f;
