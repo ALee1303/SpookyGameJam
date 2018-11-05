@@ -129,6 +129,10 @@ The game jam required us not to use old source from previous projects. Therefore
 
   The harder part was dealing with the edge case where needle sticks to the doll when colliding at the edge of the needle, which seemed physically unintuitive. To handle this case, I used a trigger-box half the size of the needle so that it would seem like the needle only sticks to the doll when it penetrates half way through.
 
+  | ![png](needle.png) |
+  |:---|
+  | *The 2DCollision Box is only set to half of the needles as shown.* |
+
   ### Obstacles([Assets/Scripts/Obstacles/ObstacleBase.cs](Assets/Scripts/Obstacles/ObstacleBase.cs))
   This is a script attached to the grave or spinning blades to add score and play sound effect when colliding with the doll. Both score and audio clip fields were serialized for the designer to implement. When a game object with this script collided with the doll, the doll called the ObstacleBase's Interact() method to play the effect and add score.
 
