@@ -10,10 +10,7 @@ public class GameManager : Singleton<GameManager>
 {
    // Called on GameOver
     public UnityAction OnGameOver;
-
-    // Holder for Prefab to spawn
-    public GameObject VooDooPrefab;
-
+    
     // Reference to current UI, set on Awake call of the corresponding UIController used
     public UIController CurrentUI;
 
