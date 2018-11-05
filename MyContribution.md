@@ -5,14 +5,14 @@ The game jam required us not to use old source from previous projects. Therefore
 
 <!--ts-->
 * Handling Game Loop and Logic:
-  * [GameManager](###gamemanager)
-  * [ScoreManager](###scoremanager)
-  * [UI Control](###ui-control)
+  * [GameManager](Assets/Scripts/GameManager.cs)
+  * [ScoreManager](Assets/Scripts/ScoreManager.cs)
+  * [UI Control](Assets/Scripts/UI)
 * Gameplay Mechanics:
-  * [Eyeball Movement](###eyeball-movement)
-  * [Needle](###needle)
-  * [Obstacles](###obstacles)
-  * [Spawner](###spawner)
+  * [Eyeball Movement](Assets/Scripts/EyeLook.cs)
+  * [Needle](Assets/Scripts/Needle.cs)
+  * [Obstacles](Assets/Scripts/Obstacles/ObstacleBase.cs))
+  * [Spawner](Assets/Scripts/Spawner.cs)
 <!--te-->
 
 -----------------------------------------------------
