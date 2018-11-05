@@ -41,13 +41,6 @@ public class Spawner : MonoBehaviour
             return;
         GetComponent<AudioSource>().Play();
         StartCoroutine(DestroyDoll());
-        // if the game didn't end from previous line, respawn the doll
-        if (GameManager.Instance.CurrentState == GameState.Playing)
-        {
-            Transform newDoll = Instantiate(dollPrefab, spawnPoint.position, Quaternion.identity).transform.GetChild(0);
-            mainCamera.target = newDoll;
-            eye.Doll = newDoll;
-        }
     }
 
     /// <summary>
@@ -63,5 +56,12 @@ public class Spawner : MonoBehaviour
         isDestryoing = false;
         // handle GameOver logic
         GameManager.Instance.OnDollDestroyed();
+        // if the game didn't end from previous line, respawn the doll
+        if (GameManager.Instance.CurrentState == GameState.Playing)
+        {
+            Transform newDoll = Instantiate(dollPrefab, spawnPoint.position, Quaternion.identity).transform.GetChild(0);
+            mainCamera.target = newDoll;
+            eye.Doll = newDoll;
+        }
     }
 }

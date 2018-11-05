@@ -2836,7 +2836,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1516053635}
   dollPrefab: {fileID: 1963555515605958, guid: d3b11ecf9c4ce49c4b7e23fca5fafdb0, type: 2}
   clip: {fileID: 8300000, guid: 43185537823714a12b5505d12e81416c, type: 3}
-  destroyDelay: 1
+  destroyDelay: 3
   mainCamera: {fileID: 1275861763}
   eye: {fileID: 403369886}
 --- !u!82 &305638496
@@ -3520,10 +3520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a96fe5246cd24415b3c2f32aa63a9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doll: {fileID: 1304422129}
-  origin: {x: 0, y: 0}
+  Doll: {fileID: 1304422129}
   eyeRadius: 3
-  viewRange: 10
   speed: 10
 --- !u!4 &403369887
 Transform:
