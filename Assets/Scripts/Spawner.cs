@@ -10,15 +10,19 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     GameObject dollPrefab;
 
+    // played on death
     [SerializeField]
     AudioClip clip;
 
+    // time before destruction of the doll
     [SerializeField]
     float destroyDelay;
 
+    // reference to set the camera to follow the respawned doll
     [SerializeField]
     SmoothCamera2D mainCamera;
 
+    // reference to set the eye to follow the respawned doll
     [SerializeField]
     EyeLook eye;
 
