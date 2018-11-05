@@ -28,13 +28,13 @@ public class ScoreManager : MonoBehaviour
     public void UpdateMultiplier(float deltaMultiplier)
     {
         multiplier += deltaMultiplier;
-        OnMultiplierUpdate(multiplier);
+        OnMultiplierUpdate.Invoke(multiplier);
     }
 
     public void HandleDollDestroyed()
     {
         multiplier = 1.0f;
-        OnMultiplierUpdate(multiplier);
+        OnMultiplierUpdate.Invoke(multiplier);
     }
 
     private void OnDestroy()
