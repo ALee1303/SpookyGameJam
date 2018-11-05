@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIController : MonoBehaviour
+public abstract class UIController : MonoBehaviour
 {
     protected virtual void Awake()
     {
