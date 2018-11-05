@@ -8,32 +8,44 @@ public enum GameState { Title, Playing, GameOver };
 
 public class GameManager : Singleton<GameManager>
 {
+   // Called on GameOver
     public UnityAction OnGameOver;
 
+    // Holder for Prefab to spawn
     public GameObject VooDooPrefab;
 
+    // Reference to current UI, set on Awake call of the corresponding UIController used
     public UIController CurrentUI;
 
+    // Reference to ScoreManager. Only Set when Playing and BoardScene is loaded on ScoreManager's Awake()
     public ScoreManager ScoreManager;
 
-    Scene currentScene;
+    // current state loaded. used to Unload Scene on scene transition
+    private Scene currentScene;
 
+    // time between GameOver and Title screen
     [SerializeField]
-    float restartDelay = 3.0f;
+    private float restartDelay = 3.0f;
 
+    // Lives before GameOver
+    [SerializeField]
     private int lives = 3;
 
-    public GameState gameState;
+    // current GameState
+    [SerializeField]
+    private GameState currentState;
 
-    public GameState GameState
+    // Property for current Gamestate.
+    // Use this to set GameState instead of gameState to properly handle stateChanged logic
+    public GameState CurrentState
     {
-        get { return gameState; }
+        get { return currentState; }
         private set 
         {
-            if (gameState != value)
+            if (currentState != value)
             {
-                gameState = value;
-                StateChanged(GameState);
+                currentState = value;
+                StateChanged(value);
             }
         }
     }
@@ -41,7 +53,7 @@ public class GameManager : Singleton<GameManager>
     public void ChangeState(GameState newState)
     {
         // must change Property
-        GameState = newState;
+        CurrentState = newState;
     }
 
 	// Use this for initialization
@@ -54,16 +66,22 @@ public class GameManager : Singleton<GameManager>
     {
         // TODO: Title Screen
         SceneManager.sceneLoaded += OnSceneLoaded;
-        HandleLoadScene("Title");
+        // load the scene when first starting the gmae
+        StateChanged(CurrentState);
     }
 
-    void HandleLoadScene(string newScene)
+    void LoadScene(string newScene)
     {
+        // unload previous scene
         if (currentScene.name != null)
         {
             SceneManager.UnloadSceneAsync(currentScene);
         }
-        SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Additive);
+        // in case scene already loaded but not set as currentScence
+        Scene duplicate = SceneManager.GetSceneByName(newScene);
+        // load this scene only if this scene was not loaded
+        if (duplicate.name != newScene)
+            SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Additive);
     }
 
     void StateChanged(GameState newState)
@@ -71,11 +89,11 @@ public class GameManager : Singleton<GameManager>
         switch(newState)
         {
             case GameState.Title:
-                HandleLoadScene("Title");
+                LoadScene("Title");
                 break;
             case GameState.Playing:
                 lives = 3;
-                HandleLoadScene("PinballBoardMain");
+                LoadScene("PinballBoardMain");
                 break;
             case GameState.GameOver:
                 OnGameOver.Invoke();
@@ -104,17 +122,15 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    // Initializzes ScoreManager
     void OnSceneLoaded(Scene newScene, LoadSceneMode mode)
     {
         currentScene = newScene;
-        if (newScene.name == "Title")
-        {
-
-        }
         if (newScene.name == "PinballBoardMain")
         {
             ScoreManager.OnScoreUpdate += HandleScoreUpdate;
             ScoreManager.OnMultiplierUpdate += HandleMultiUpdate;
+            OnGameOver += ((BoardUI)CurrentUI).UpdateGameOverText;
         }
     }
 
