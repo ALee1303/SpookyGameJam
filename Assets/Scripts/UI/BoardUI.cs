@@ -20,7 +20,6 @@ public class BoardUI : UIController {
     protected override void Awake()
     {
         base.Awake();
-        GameManager.Instance.OnGameOver += HandleGameOver;
     }
 
 
@@ -37,7 +36,8 @@ public class BoardUI : UIController {
         livesText.text = "x" + newLives.ToString();
     }
 
-    public void HandleGameOver()
+    // subscribed to GameManager.OnGameOver when scene is loaded
+    public void UpdateGameOverText()
     {
         gameOverText.gameObject.SetActive(true);
     }
