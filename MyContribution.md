@@ -5,7 +5,7 @@ The game jam required us not to use old source from previous projects. Therefore
 
 <!--ts-->
 * Handling Game Loop and Logic:
-  * [GameManager](Assets/Scripts/GameManager.cs))
+  * [GameManager](Assets/Scripts/GameManager.cs)
   * [ScoreManager](Assets/Scripts/ScoreManager.cs)
   * [UI Control](Assets/Scripts/UI)
 * Gameplay Mechanics:
