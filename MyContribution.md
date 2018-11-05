@@ -1,18 +1,18 @@
 # My Contribution
-As a programmer, I created script for core framework which established the game loop and logic, also enabling UI control. I also implemented specific game mechanics such as needle attachment and eyeball animation.
+Last October 12, I attended the IGDA Chicago's 2018 Spooky Game Jam, which was my first ever game jam. As a programmer, I created script for core framework which established the game loop and logic, also enabling UI control. I also implemented specific game mechanics such as needle attachment and eyeball animation.
 
 The game jam required us not to use old source from previous projects. Therefore I had to adjust my workflow and code design accordingly with situation to succesfully complete the working build in time. Following lists are overviews about the approach I took to accomplish my task.
 
 <!--ts-->
 * Handling Game Loop and Logic:
-  * [GameManager](#gamemanager)
-  * [ScoreManager](#scoremanager)
-  * [UI Control](#ui-control)
+  * [GameManager](###gamemanager)
+  * [ScoreManager](###scoremanager)
+  * [UI Control](###ui-control)
 * Gameplay Mechanics:
-  * [Eyeball Movement](#eyeball-movement)
-  * [Needle](#needle)
-  * [Obstacles](#obstacles)
-  * [Spawner](#Spawner)
+  * [Eyeball Movement](###eyeball-movement)
+  * [Needle](###needle)
+  * [Obstacles](###obstacles)
+  * [Spawner](###spawner)
 <!--te-->
 
 -----------------------------------------------------
