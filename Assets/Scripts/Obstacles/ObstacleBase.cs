@@ -6,15 +6,20 @@ public class ObstacleBase : MonoBehaviour
 {
     [SerializeField]
     protected float scoreModifier;
-
-    //played by VooDoo
+    
     [SerializeField]
     protected AudioClip clip;
-    // accessor for voodoo
-    public AudioClip Clip{ get { return clip; }}
 
-    public virtual void Interact(VooDooDoll instigator)
+    /// <summary>
+    /// called be VooDooDoll when colliding
+    /// </summary>
+    /// <param name="velocity">magnitude of the collision velocity</param>
+    public virtual void Interact(float velocity)
     {
+        // add the score
         GameManager.Instance.ScoreManager.UpdateScore(scoreModifier);
+        //play the clip
+        if (clip)
+            SFXPlayer.Instance.PlayClip(clip, velocity);
     }
 }

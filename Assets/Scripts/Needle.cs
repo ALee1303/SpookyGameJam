@@ -28,8 +28,8 @@ public class Needle : MonoBehaviour
 
     private void attachNeedle(Transform bodyPart)
     {
-        // make needle follow player
-        this.transform.parent.parent = bodyPart.transform;
+        // make needle's parent to get the whole needle to follow player
+        this.transform.parent = bodyPart.transform;
         bodyPart.GetComponent<Rigidbody2D>().mass += mass;
         this.GetComponent<Collider2D>().enabled = false;
     }
